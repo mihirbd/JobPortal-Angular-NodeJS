@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card card-plain">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title">Post a Blog</h4>
+                <p class="card-category">Job Portal Blog Post
+
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <form [formGroup]="userForms" (ngSubmit)="bloginsert()">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Post Title</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" formControlName="blog_title">
+
+                            </div>
+
+                            <div class="form-floating">
+                                <label for="floatingTextarea">Post Content</label>
+                                <textarea formControlName="blog_description" class="form-control"
+                                    placeholder="post content here" rows="8" id="floatingTextarea"></textarea>
+
+                            </div>
+                            <span><br></span>
+                            <div class="custom-file">
+                                <label for="exampleFormControlInput1">Company Logo</label>
+                                <input type="file" class="custom-file-input" id="validatedCustomFile" required
+                                    (change)="CreateBase64String($event)">
+                                <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+
+                            </div>
+                            <input type="hidden" formControlName="blog_image" [(ngModel)]="cardImageBase64"
+                                #fetured_image>
+                            <span>-</span>
+                            <div>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

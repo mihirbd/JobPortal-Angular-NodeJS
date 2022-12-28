@@ -1,0 +1,26 @@
+<div style="background-color:#080710">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form style="background-color:#45424b" [formGroup]="loginForm" (ngSubmit)="login()">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" formControlName="email" placeholder="Email or Phone" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" formControlName="password">
+
+
+        <button style="color: #080710;">Log In</button>
+        <br>
+        <br>
+        <p>not registrad?<a routerLink="/reg-form" style="color: #ff0000;"> Registar</a> your Account!</p>
+
+
+
+
+    </form>
+</div>
